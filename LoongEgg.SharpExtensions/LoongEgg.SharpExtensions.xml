@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LoongEgg.SharpExtensions</name>
+    </assembly>
+    <members>
+        <member name="M:LoongEgg.SharpExtensions.BitArrayExtensions.HasFlagAt(System.Collections.BitArray,System.UInt32)">
+            <summary>
+            判断某bit位的flag是否有效
+            </summary> 
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.BitArrayExtensions.ToBitString(System.Collections.BitArray,System.Char)">
+            <summary>
+            {false, true , false, true, false, true, false, true} / TFTF_TFTF -> 1010_1010
+            </summary> 
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.byteExtensions.GetFlagsFrom(System.Byte[],System.Collections.Generic.Dictionary{System.UInt32,System.String},System.Boolean)">
+            <summary>
+            遍历获取字典中的flag标志, 如果某位有效则该为flag为flag本身, 否则为!flag
+            </summary>
+            <param name="self"></param>
+            <param name="dict"></param>
+            <param name="isRevLogic">反逻辑标志</param>
+            <returns>遍历获取的flag有效标记</returns>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.byteExtensions.ToBitArray(System.Byte[])">
+            <summary>
+            0xAA -> TrueFalseTrueFalse TrueFalseTrueFalse
+            </summary>  
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.byteExtensions.ToBitString(System.Byte[],System.Char)">
+            <summary>
+            {0xAA, 0x55, 0x55} -> 0101_0101_0101_0101_1010_1010
+            </summary>  
+        </member>
+        <member name="T:LoongEgg.SharpExtensions.EnumExtensions">
+            <summary>
+            Extended methods of <see cref="T:System.Enum"/>
+            </summary>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.EnumExtensions.GetDescription(System.Enum)">
+            <summary>
+            获取枚举类<see cref="T:System.ComponentModel.DescriptionAttribute"/>标注的内容
+            </summary>
+            <param name="self"></param>
+            <returns>标注的内容</returns>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.stringExtensions.Deserialize``1(System.String)">
+            <summary>
+            将xml字符串反序列化, 注意为UTF8编码
+            </summary>
+            <typeparam name="T">目标类型</typeparam>
+            <param name="self">xml字符串</param>
+            <returns>序列化后的实例</returns>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.stringExtensions.ReadAsXmlFileToObject``1(System.String)">
+            <summary>
+            将字符串当做xml文件路径读取为类的实例
+            </summary>
+            <typeparam name="T">target type of class</typeparam>
+            <param name="path">the path of xml file</param>
+            <returns>the instance of target type</returns>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.stringExtensions.CreatAsXmlFile(System.String,System.Object)">
+             <summary>
+             将字符串当做xml文件路径, 把类的实例序列化
+             </summary>
+             <param name="path">the path of xml file</param>
+             <param name="obj">the object to serialize</param>
+             <example>
+             <code>
+             [XmlRoot]
+             public class StubClass
+             {
+                [XmlArray]
+                [XmlArrayItem("Item")]
+                public string[] Items { get; set; }
+            
+                [XmlAttribute]
+                public string Label { get; set; }
+            
+                [XmlAttribute]
+                public int Id { get; set; } 
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.stringExtensions.ToUInt32StringDictonary(System.String,System.Char[])">
+            <summary>
+            将字符串分割为UInt32和string的键值对
+            </summary>
+            <param name="self">带分隔的字符串, 比如"0: fla0; 1: fla1."</param>
+            <param name="separator">分隔符, [default] = new char[] { ':', ',', ';', ' ', '.' }</param>
+            <returns>分割好的键值对</returns>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.stringExtensions.ToFlagDictonary(System.String,System.Char[])">
+            <summary>
+            <see cref="M:LoongEgg.SharpExtensions.stringExtensions.ToUInt32StringDictonary(System.String,System.Char[])"/>
+            </summary>
+            <param name="self">带分隔的字符串, 比如"0: fla0; 1: fla1."</param>
+            <param name="separator">分隔符, [default] = new char[] { ':', ',', ';', ' ', '.' }</param>
+            <returns>分割好的键值对</returns>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.stringExtensions.ToEumDictonary(System.String,System.Char[])">
+            <summary>
+            <see cref="M:LoongEgg.SharpExtensions.stringExtensions.ToUInt32StringDictonary(System.String,System.Char[])"/>
+            </summary>
+            <param name="self">带分隔的字符串, 比如"0: fla0; 1: fla1."</param>
+            <param name="separator">分隔符, [default] = new char[] { ':', ',', ';', ' ', '.' }</param>
+            <returns>分割好的键值对</returns>
+        </member>
+        <member name="T:LoongEgg.SharpExtensions.UInt16Extensions">
+            <summary>
+            Extended methods of <see cref="T:System.UInt16"/>
+            </summary>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.UInt16Extensions.ReverseBits(System.UInt16,System.Int32)">
+            <summary>
+            change the source bits[0101] to[1010]
+            </summary>
+            <param name="valueLength">the bits length to reverse</param>
+            <returns>翻转后的16位无符号整形</returns>
+        </member>
+        <member name="T:LoongEgg.SharpExtensions.UInt32Extensions">
+            <summary>
+            Extended methods of <see cref="T:System.UInt32"/>
+            </summary>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.UInt32Extensions.ReverseBits(System.UInt32,System.Int32)">
+            <summary>
+            change the source bits[0101] to[1010]
+            </summary>
+            <param name="valueLength">the bits length to reverse</param>
+            <returns>翻转后的32位无符号整形</returns>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.UInt32Extensions.GetEnumFrom(System.UInt32,System.Collections.Generic.Dictionary{System.UInt32,System.String})">
+            <summary>
+            获取指定直接位置的flag
+            </summary> 
+        </member>
+        <member name="T:LoongEgg.SharpExtensions.UInt64Extensions">
+            <summary>
+            Extended methods of <see cref="T:System.UInt64"/>
+            </summary>
+        </member>
+        <member name="M:LoongEgg.SharpExtensions.UInt64Extensions.ReverseBits(System.UInt64,System.Int32)">
+            <summary>
+            change the source bits[0101] to[1010]
+            </summary>
+            <param name="valueLength">the bits length to reverse</param>
+            <returns>翻转后的64位无符号整形</returns>
+        </member>
+    </members>
+</doc>

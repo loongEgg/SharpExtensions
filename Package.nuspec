@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>LoongEgg.SharpExtensions</id>
+    <version>0.1.1</version>
+    <authors>LoongEgg</authors>
+    <owners>LoongEgg</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/loongEgg/SharpExtensions</projectUrl> 
+    <description>Type Extensions for c#</description>
+    <releaseNotes>First Release(Experimental)</releaseNotes>
+    <copyright>Copyright 2021</copyright>
+    <tags>TypeExtension</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard3.1"> 
+      </group>
+	  <group targetFramework=".NET4.5"> 
+      </group>
+    </dependencies>
+  </metadata>
+</package>
