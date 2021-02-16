@@ -1,10 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;.net4.5</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net4.5</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>LoongEgg</Authors>
+    <Description>C#基础类的扩展</Description>
+    <PackageProjectUrl>https://github.com/loongEgg/SharpExtensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/loongEgg/SharpExtensions</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.1|AnyCPU'">
+    <DocumentationFile>C:\Users\King\source\repos\LoongEgg.SharpExtensions\LoongEgg.SharpExtensions\LoongEgg.SharpExtensions.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net4.5|AnyCPU'">
     <DocumentationFile>C:\Users\King\source\repos\LoongEgg.SharpExtensions\LoongEgg.SharpExtensions\LoongEgg.SharpExtensions.xml</DocumentationFile>
   </PropertyGroup>
 
